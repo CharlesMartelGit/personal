@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import openSocket from "socket.io-client";
 import tesseract from "./tesseract.gif"
-import { Button, Container, Form } from "react-bootstrap"
+import { Alert, Button, Container, Form } from "react-bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./App.css"
 
@@ -22,6 +22,7 @@ function App() {
     <div className="App">
     <header className="App-header">
       <Container>
+        <Alert variant="primary">Charles' Bug Tracker</Alert>
         <img src={tesseract} className="Tesseract" alt="tesseract"/>
         <Form>
           <Form.Group>
@@ -35,6 +36,7 @@ function App() {
             <Form.Text className="text-muted"></Form.Text>
           </Form.Group>
         </Form>
+        <Button variant="secondary" type="submit">Login</Button>
       </Container>
     </header>
     </div>
