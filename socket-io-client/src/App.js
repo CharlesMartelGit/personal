@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import socketIOClient from "socket.io-client";
-const ENDPOINT = "http://127.0.0.1:4001";
+import openSocket from "socket.io-client";
+const socket = openSocket('http://localhost:4001', {transports: ['websocket']});
 
 function App() {
-  const [response, setResponse] = useState("");
+  const [response, setResponse] = useState("a");
 
   useEffect(() => {
-    const socket = socketIOClient(ENDPOINT);
     socket.on("FromAPI", data => {
       setResponse(data);
     });
@@ -14,7 +13,7 @@ function App() {
 
   return (
     <p>
-      It's <time dateTime={response}>{response}</time>
+      {response}
     </p>
   );
 }
