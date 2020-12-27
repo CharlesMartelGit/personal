@@ -9,7 +9,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,4 +21,20 @@
 .Tesseract {
   height: 50vh;
   width: 50vh;
+}
+
+.HomeIcon {
+  height: 40vh;
+  width: 40vh;
+  padding: 5vh;
+}
+
+.Row {
+  align-items: center;
+  justify-content: center;
+}
+
+.Field {
+  min-height: 4vh;
+  max-height: 8vh;
 }
