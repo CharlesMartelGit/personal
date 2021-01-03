@@ -1,15 +1,29 @@
 const express = require("express");
+const mysql = require("mysql")
 const http = require("http");
 const socketIo = require("socket.io");
 
 const port = process.env.PORT || 4001;
 const index = require("./routes/index");
-
 const app = express();
 app.use(index);
 
-const server = http.createServer(app);
+const connect = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "sampleDB"
+});
 
+connection.connect(function(error) {
+  if (!!error) {
+    console.log("Error connecting to MySQL");
+  } else {
+    console.log("Connected to MySQL");
+  }
+});
+
+const server = http.createServer(app);
 const io = socketIo(server);
 
 let interval;
