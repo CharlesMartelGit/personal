@@ -27,8 +27,7 @@ io.on("connection", (socket) => {
 });
 
 const getApiAndEmit = socket => {
-  const response = new Date();
-  socket.emit("FromAPI", response);
+  socket.emit("FromAPI", "b");
 };
 
 server.listen(port, () => console.log(`Listening on port ${port}`));
