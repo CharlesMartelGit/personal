@@ -4,7 +4,7 @@ import projects from "./resources/projects.png"
 import tickets from "./resources/tickets.png"
 import "./App.css"
 import auth from "./auth.js"
-import { Alert, Button, Col, Container, Form, Row } from "react-bootstrap"
+import { Alert, Button, Col, Container, Row } from "react-bootstrap"
 import { useHistory } from "react-router-dom"
 
 function HomePage() {
@@ -40,7 +40,7 @@ function HomePage() {
               <Button variant="secondary">
                 <img src={tickets} className="HomeIcon" alt="tickets"/>
               </Button>
-              <Alert variant="info">Projects</Alert>
+              <Alert variant="info">Tickets</Alert>
             </Col>
           </Row>
         </Container>
