@@ -1,8 +1,15 @@
 const express = require("express");
 const router = express.Router();
+const connection = require("../connection");
 
 router.get("/", (req, res) => {
-  res.send({ response: "Beep boop" }).status(200);
+  connection.query("SELECT * from user", (err, rows) =>{
+    if (err) {
+      throw err;
+    } else {
+      console.log(rows);
+    }
+  });
 });
 
 module.exports = router;
