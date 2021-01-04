@@ -8,15 +8,16 @@ const index = require("./routes/index");
 const app = express();
 app.use(index);
 
-const connect = mysql.createConnection({
+const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "",
-  database: "sampleDB"
+  password: "bugtrackerMySQL123$",
+  database: "bugtracker_db",
+  port: "3306"
 });
 
-connection.connect(function(error) {
-  if (!!error) {
+connection.connect((err) => {
+  if (err) {
     console.log("Error connecting to MySQL");
   } else {
     console.log("Connected to MySQL");
