@@ -1,4 +1,4 @@
-class auth {
+class AuthenticationService {
   constructor(){
     this.authenticated = false;
   }
@@ -16,4 +16,4 @@ class auth {
   }
 }
 
-export default new auth();
+export default new AuthenticationService();

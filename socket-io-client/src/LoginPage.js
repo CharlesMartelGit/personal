@@ -1,15 +1,16 @@
-import React from "react"
+import React, { useState } from "react"
 import tesseract from "./resources/tesseract.gif"
 import "./App.css"
-import auth from "./auth.js"
+import AuthenticationService from "./AuthenticationService.js"
 import { Alert, Button, Container, Form } from "react-bootstrap"
 import { useHistory } from "react-router-dom"
 
 function LoginPage() {
-  let history = useHistory();
-
+  const history = useHistory();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   function handleClick() {
-    auth.login();
+    AuthenticationService.login();
     history.push("/home");
   }
 
@@ -21,14 +22,12 @@ function LoginPage() {
           <img src={tesseract} className="Tesseract" alt="tesseract"/>
           <Form>
             <Form.Group>
-              <Form.Label>Email Address</Form.Label>
-              <Form.Control type="email" placeholder="example@email.com"></Form.Control>
-              <Form.Text className="text-muted"></Form.Text>
+              <Form.Label>Username</Form.Label>
+              <Form.Control type="text" placeholder="username" onChange={(event) => setUsername(event.target.value)}></Form.Control>
             </Form.Group>
             <Form.Group>
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="password"></Form.Control>
-              <Form.Text className="text-muted"></Form.Text>
+              <Form.Control type="password" placeholder="password" onChange={(event) => setPassword(event.target.value)}></Form.Control>
             </Form.Group>
           </Form>
           <Button variant="secondary" type="submit" onClick={handleClick}>Login</Button>

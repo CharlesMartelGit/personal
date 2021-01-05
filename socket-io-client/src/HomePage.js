@@ -3,7 +3,7 @@ import manage from "./resources/manage.png"
 import projects from "./resources/projects.png"
 import tickets from "./resources/tickets.png"
 import "./App.css"
-import auth from "./auth.js"
+import AuthenticationService from "./AuthenticationService.js"
 import { Alert, Button, Col, Container, Row } from "react-bootstrap"
 import { useHistory } from "react-router-dom"
 
@@ -11,7 +11,7 @@ function HomePage() {
   let history = useHistory();
 
   function handleClick() {
-    auth.login();
+    AuthenticationService.logout();
     history.goBack();
   }
 
