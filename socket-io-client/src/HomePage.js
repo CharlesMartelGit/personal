@@ -24,7 +24,7 @@ function HomePage() {
   return (
     <div className="App">
       <header>
-        <Container fluid>
+        <Container fluid className="App-container-center">
           <Row className="Row">
               <Alert className="Field" variant="secondary">Currently signed in as : Charles</Alert>
               <Button className="Field" variant="primary" onClick={handleLogout}>Logout</Button>

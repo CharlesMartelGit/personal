@@ -18,13 +18,13 @@ function ProjectsPage() {
     <div className="App">
       <Container fluid>
         <Row>
-          <Col sm={3} className="App-projects border border-white">
+          <Col sm={3} className="App-container-top border border-white">
             <Form>
               <Form.Label>Write Something</Form.Label>
               <Form.Control type="text" placeholder="Type..." onChange={(event) => handleMessage()}></Form.Control>
             </Form>
           </Col>
-          <Col sm={9} className="App-projects border border-white">
+          <Col sm={9} className="App-container border border-white">
             <Row>
               <Alert className="Field" variant="primary">Projects</Alert>
               <Button className="Field" variant="primary" onClick={handleGoBack}>Home</Button>

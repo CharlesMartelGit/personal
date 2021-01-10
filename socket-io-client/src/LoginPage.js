@@ -16,7 +16,7 @@ function LoginPage() {
 
   return (
     <div className="App">
-      <Container className="App-login">
+      <Container className="App-container-center">
         <Alert variant="primary">Charles' Bug Tracker</Alert>
         <img src={tesseract} className="Tesseract" alt="tesseract"/>
         <Form>
