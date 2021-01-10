@@ -4,24 +4,30 @@ import projects from "./resources/projects.png"
 import tickets from "./resources/tickets.png"
 import "./App.css"
 import AuthenticationService from "./AuthenticationService.js"
+import SocketService from "./SocketService.js"
 import { Alert, Button, Col, Container, Row } from "react-bootstrap"
 import { useHistory } from "react-router-dom"
 
 function HomePage() {
   let history = useHistory();
 
-  function handleClick() {
+  function handleLogout() {
     AuthenticationService.logout();
+    SocketService.getSocket().emit("hello");
     history.goBack();
+  }
+
+  function handleProjects() {
+    history.push("/projects");
   }
 
   return (
     <div className="App">
-      <header className="App-header">
+      <header>
         <Container fluid>
           <Row className="Row">
               <Alert className="Field" variant="secondary">Currently signed in as : Charles</Alert>
-              <Button className="Field" variant="primary" onClick={handleClick}>Logout</Button>
+              <Button className="Field" variant="primary" onClick={handleLogout}>Logout</Button>
           </Row>
           <Row>
             <Col>
@@ -31,7 +37,7 @@ function HomePage() {
               <Alert variant="info">Manage</Alert>
             </Col>
             <Col>
-              <Button variant="secondary">
+              <Button variant="secondary" onClick={handleProjects}>
                 <img src={projects} className="HomeIcon" alt="projects"/>
               </Button>
               <Alert variant="info">Projects</Alert>

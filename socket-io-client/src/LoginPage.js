@@ -16,23 +16,21 @@ function LoginPage() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <Container>
-          <Alert variant="primary">Charles' Bug Tracker</Alert>
-          <img src={tesseract} className="Tesseract" alt="tesseract"/>
-          <Form>
-            <Form.Group>
-              <Form.Label>Username</Form.Label>
-              <Form.Control type="text" placeholder="username" onChange={(event) => setUsername(event.target.value)}></Form.Control>
-            </Form.Group>
-            <Form.Group>
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="password" onChange={(event) => setPassword(event.target.value)}></Form.Control>
-            </Form.Group>
-          </Form>
-          <Button variant="secondary" type="submit" onClick={handleClick}>Login</Button>
-        </Container>
-      </header>
+      <Container className="App-login">
+        <Alert variant="primary">Charles' Bug Tracker</Alert>
+        <img src={tesseract} className="Tesseract" alt="tesseract"/>
+        <Form>
+          <Form.Group>
+            <Form.Label>Username</Form.Label>
+            <Form.Control type="text" placeholder="username" onChange={(event) => setUsername(event.target.value)}></Form.Control>
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Password</Form.Label>
+            <Form.Control type="password" placeholder="password" onChange={(event) => setPassword(event.target.value)}></Form.Control>
+          </Form.Group>
+        </Form>
+        <Button variant="secondary" type="submit" onClick={handleClick}>Login</Button>
+      </Container>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import LoginPage from "./LoginPage.js"
 import HomePage from "./HomePage.js"
+import ProjectsPage from "./ProjectsPage.js"
 import SocketService from "./SocketService.js"
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={LoginPage}/>
         <Route exact path="/home" component={HomePage}/>
+        <Route exact path="/projects" component={ProjectsPage}/>
       </Switch>
     </Router>
   );
