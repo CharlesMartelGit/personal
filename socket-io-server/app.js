@@ -47,6 +47,9 @@ io.on("connection", (socket) => {
     console.log("Client disconnected");
     clearInterval(interval);
   });
+  socket.on("hello", () => {
+    console.log("Hello");
+  });
 });
 
 const getApiAndEmit = socket => {
