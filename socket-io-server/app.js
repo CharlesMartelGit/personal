@@ -47,8 +47,8 @@ io.on("connection", (socket) => {
     console.log("Client disconnected");
     clearInterval(interval);
   });
-  socket.on("hello", () => {
-    console.log("Hello");
+  socket.on("newMessage", (data) => {
+    socket.emit("message", data);
   });
 });
 
