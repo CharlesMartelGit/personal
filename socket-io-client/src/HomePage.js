@@ -13,7 +13,6 @@ function HomePage() {
 
   function handleLogout() {
     AuthenticationService.logout();
-    SocketService.getSocket().emit("hello");
     history.goBack();
   }
 

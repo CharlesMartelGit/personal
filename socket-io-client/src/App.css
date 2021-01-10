@@ -29,6 +29,10 @@
   min-height: 100vh;
 }
 
+.Message {
+  font-size: calc(2px + 2vmin);
+}
+
 .Tesseract {
   height: 50vh;
   width: 50vh;
