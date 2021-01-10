@@ -35,26 +35,15 @@ connection.connect((err) => {
   }
 });
 
-let interval;
-
 io.on("connection", (socket) => {
   console.log("Client connected");
-  if (interval) {
-    clearInterval(interval);
-  }
-  interval = setInterval(() => getApiAndEmit(socket), 1000);
   socket.on("disconnect", () => {
     console.log("Client disconnected");
-    clearInterval(interval);
   });
   socket.on("newMessage", (data) => {
-    socket.emit("message", data);
+    io.emit("message", data);
   });
 });
-
-const getApiAndEmit = socket => {
-  socket.emit("FromAPI", "b");
-};
 
 const port = process.env.PORT || 4001;
 server.listen(port, () => console.log(`Listening on port ${port}`));
