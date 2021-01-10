@@ -41,7 +41,10 @@ io.on("connection", (socket) => {
     console.log("Client disconnected");
   });
   socket.on("newMessage", (data) => {
-    io.emit("message", data);
+    const date = new Date();
+    const time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+    const message = JSON.parse('{ "message": "' + data.message + '", "timestamp": "' + time  + '", "user": "' + data.user + '" }');
+    io.emit("message", message);
   });
 });
 
